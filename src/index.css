@@ -89,6 +89,7 @@ a:hover {
 }
 
 .btn {
+    font-size: 1rem;
     width: max-content;
     display: inline-block;
     color: var(--color-primary);
