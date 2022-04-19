@@ -7,6 +7,54 @@ import IMG4 from '../../assets/portfolio4.jpg'
 import IMG5 from '../../assets/portfolio5.png'
 import IMG6 from '../../assets/portfolio6.jpg'
 
+
+
+const data = [
+  {
+    id: 1,
+    image: IMG1,
+    title: 'Portfolio',
+    github: 'https://github.com/doubleO-Seven/portfolio-2.0',
+    demo: 'https://dribbble.com/shots/17567562-Heart'
+  },
+  {
+    id: 2,
+    image: IMG2,
+    title: 'Portfolio',
+    github: 'https://github.com/doubleO-Seven/portfolio-2.0',
+    demo: 'https://dribbble.com/shots/17567562-Heart'
+  },
+  {
+    id:3,
+    image: IMG3,
+    title: 'Portfolio',
+    github: 'https://github.com/doubleO-Seven/portfolio-2.0',
+    demo: 'https://dribbble.com/shots/17567562-Heart'
+  },
+  {
+    id: 4,
+    image: IMG4,
+    title: 'Portfolio',
+    github: 'https://github.com/doubleO-Seven/portfolio-2.0',
+    demo: 'https://dribbble.com/shots/17567562-Heart'
+  },
+  {
+    id: 5,
+    image: IMG5,
+    title: 'Portfolio',
+    github: 'https://github.com/doubleO-Seven/portfolio-2.0',
+    demo: 'https://dribbble.com/shots/17567562-Heart'
+  },
+  {
+    id: 6,
+    image: IMG6,
+    title: 'Portfolio',
+    github: 'https://github.com/doubleO-Seven/portfolio-2.0',
+    demo: 'https://dribbble.com/shots/17567562-Heart'
+  }
+]
+
+
 const Portfolio = () => {
   return (
     <section id='portfolio'>
@@ -14,60 +62,21 @@ const Portfolio = () => {
       <h2>Portfolio</h2>
 
       <div className="container portfolio__container">
-        <article className="portfolio__item">
+        {
+        data.map(({id, image, title, github, demo}) => {
+            return (
+              <article key = {id}className="portfolio__item">
           <div className="portfolio__item-image"></div>
-            <img src={IMG1} alt="" />
-          <h3>My Portfolio Website</h3>
+            <img src={image} alt={title} />
+          <h3>{title}</h3>
           <div className="portfolio__item-cta">
-            <a href="https://github.com/doubleO-Seven/portfolio-2.0" className='btn' target='_blank'>Github</a>
-            <a href="https://dribbble.com/shots/17567562-Heart" className='btn' target='_blank'>Live Demo</a>
+            <a href={github} className='btn' target='_blank'>Github</a>
+            <a href={demo} className='btn' target='_blank'>Live Demo</a>
           </div>
         </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image"></div>
-            <img src={IMG1} alt="" />
-          <h3>My Portfolio Website</h3>
-          <div className="portfolio__item-cta">
-            <a href="https://github.com/doubleO-Seven/portfolio-2.0" className='btn' target='_blank'>Github</a>
-            <a href="https://dribbble.com/shots/17567562-Heart" className='btn' target='_blank'>Live Demo</a>
-          </div>
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image"></div>
-            <img src={IMG1} alt="" />
-          <h3>My Portfolio Website</h3>
-          <div className="portfolio__item-cta">
-            <a href="https://github.com/doubleO-Seven/portfolio-2.0" className='btn' target='_blank'>Github</a>
-            <a href="https://dribbble.com/shots/17567562-Heart" className='btn' target='_blank'>Live Demo</a>
-          </div>
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image"></div>
-            <img src={IMG1} alt="" />
-          <h3>My Portfolio Website</h3>
-          <div className="portfolio__item-cta">
-            <a href="https://github.com/doubleO-Seven/portfolio-2.0" className='btn' target='_blank'>Github</a>
-            <a href="https://dribbble.com/shots/17567562-Heart" className='btn' target='_blank'>Live Demo</a>
-          </div>
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image"></div>
-            <img src={IMG1} alt="" />
-          <h3>My Portfolio Website</h3>
-          <div className="portfolio__item-cta">
-            <a href="https://github.com/doubleO-Seven/portfolio-2.0" className='btn' target='_blank'>Github</a>
-            <a href="https://dribbble.com/shots/17567562-Heart" className='btn' target='_blank'>Live Demo</a>
-          </div>
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image"></div>
-            <img src={IMG1} alt="" />
-          <h3>My Portfolio Website</h3>
-          <div className="portfolio__item-cta">
-            <a href="https://github.com/doubleO-Seven/portfolio-2.0" className='btn' target='_blank'>Github</a>
-            <a href="https://dribbble.com/shots/17567562-Heart" className='btn' target='_blank'>Live Demo</a>
-          </div>
-        </article>
+            )
+        })
+        }
       </div>
     </section>
   )
