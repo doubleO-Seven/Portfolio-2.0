@@ -29,3 +29,11 @@ footer a {
     margin-bottom: 4rem;
     color: var(--color-bg);
 }
+
+/* media query - for phone */
+@media screen and (max-width: 600px) {
+    .permalinks {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
